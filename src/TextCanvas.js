@@ -27,12 +27,31 @@ const InputField = styled.input`
 `;
 
 const Button = styled.button`
-  padding: 10px 10px;
+  margin-top: 20px;
+  background-color: #3d3bf3;
+  color: #fff;
+  padding: 12px 22px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
 `;
 
 const FileInput = styled.input`
   margin-top: 20px;
   display: none;
+`;
+
+const DownloadButton = styled.button`
+  margin-top: 20px;
+  background-color: #9694ff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
 `;
 
 function TextCanvas() {
@@ -135,6 +154,14 @@ function TextCanvas() {
     setFontFamily(e.target.value);
   };
 
+  const handleDownload = () => {
+    const dataUrl = canvasRef.current.toDataURL("image/png");
+    const link = document.createElement("a");
+    link.href = dataUrl;
+    link.download = "canvas_image.png";
+    link.click();
+  };
+
   useEffect(() => {
     const ctx = canvasRef.current.getContext("2d");
     ctx.canvas.width = 450;
@@ -184,22 +211,22 @@ function TextCanvas() {
             <option value="Poppins">Poppins</option>
           </select>
         </div>
-        <div class="file-input">
+        <div className="file-input">
           <FileInput
             type="file"
             name="file-input"
             id="file-input"
-            class="file-input__input"
+            className="file-input__input"
             accept="image/*"
             onChange={handleImageUpload}
           />
-          <label class="file-input__label" for="file-input">
+          <label className="file-input__label" htmlFor="file-input">
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="upload"
-              class="svg-inline--fa fa-upload fa-w-16"
+              className="svg-inline--fa fa-upload fa-w-16"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -212,6 +239,9 @@ function TextCanvas() {
             <span>Upload file</span>
           </label>
         </div>
+        <DownloadButton className="button tooltip" onClick={handleDownload}>
+          Download
+        </DownloadButton>
       </InputContainer>
     </CanvasContainer>
   );

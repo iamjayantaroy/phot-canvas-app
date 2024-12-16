@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-export const Right = () => {
+export const Right = ({ onPhotoChange }) => {
+  const [selectIamges, setSelectedImage] = useState([]);
+
+  const handleFileChange = (event) => {
+    const file = Array.from(event.target.files);
+
+    const imageUrls = file.map((file) => URL.createObjectURL(file));
+    setSelectedImage(imageUrls);
+    onPhotoChange(imageUrls);
+  };
   return (
     <div className="right">
       <div className="input">
@@ -9,7 +18,12 @@ export const Right = () => {
       </div>
       <div className="image">
         <h2>Upload Image</h2>
-        <input type="file" />
+        <input
+          type="file"
+          accept="image/*"
+          multiple
+          onChange={handleFileChange}
+        />
       </div>
       <div className="font-style">
         <input type="number" />

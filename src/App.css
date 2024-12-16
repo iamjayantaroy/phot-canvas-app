@@ -3,56 +3,115 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-body {
   font-family: "Poppins";
-  margin: auto;
 }
 
-.field {
+.Navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1.4rem;
+}
+
+ul {
+  display: flex;
+  gap: 10px;
+}
+
+ul li {
+  list-style-type: none;
+  font-size: 1rem;
+  border: none;
+  padding: 5px 10px;
+  background-color: rgb(62, 117, 234);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.Navbar button {
+  color: black;
+  background-color: rgb(51, 231, 51);
+  padding: 5px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.slider {
+  max-width: 250px;
+  height: 90vh;
+  border-right: 0px 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.field input {
-  padding: 10px;
-  width: 90px;
-}
-
-.field select {
-  padding: 10px;
-  width: 90px;
-}
-
-.file-input {
-  margin-top: 20px;
-}
-
-.file-input__input {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-.file-input__label {
-  cursor: pointer;
-  display: inline-flex;
   align-items: center;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  font-size: 14px;
-  padding: 10px 12px;
-  background-color: #4245a8;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
 }
 
-.file-input__label svg {
-  height: 16px;
-  margin-right: 4px;
+.slider .photos {
+  width: 150px;
+  height: 350px;
+  padding: 100px;
+  overflow: hidden;
+}
+
+.slider .arrow {
+  padding: 10px;
+}
+
+.right {
+  max-width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  padding-top: 100px;
+  padding-right: 20px;
+}
+.right .input {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+}
+
+.right .input input {
+  padding: 5px;
+}
+
+.right .input input:focus {
+  border-color: 1px solid #5db996;
+}
+
+.right .input button {
+  padding: 5px 10px;
+  background-color: #5db996;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+.right .image {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+.right .font-style {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  gap: 10px;
 }

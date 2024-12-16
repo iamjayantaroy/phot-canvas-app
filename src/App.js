@@ -1,11 +1,13 @@
 import React from "react";
-import TextCanvas from "./TextCanvas";
 import "./App.css";
+import Navbar from "./components/Navbar";
+import Wrapper from "./components/Wrapper";
 
 const App = () => {
   return (
     <div className="App">
-      <TextCanvas />
+      <Navbar />
+      <Wrapper />
     </div>
   );
 };

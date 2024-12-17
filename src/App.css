@@ -126,10 +126,6 @@ ul li {
   align-items: center;
   gap: 15px;
 }
-.middle .canvas {
-  width: 400px;
-  height: 520px;
-}
 
 .middle .arrow {
   cursor: pointer;

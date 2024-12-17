@@ -36,8 +36,8 @@ const Wrapper = () => {
   };
 
   //extract text
-  const handleTextInput = (newtext) => {
-    setText(newtext);
+  const handleTextInput = (newText) => {
+    setText(newText);
   };
 
   //extract font size
@@ -59,7 +59,15 @@ const Wrapper = () => {
   return (
     <div className="wrapper">
       <Slider photo={currentImage} prev={handlePrev} next={handleNext} />
-      <Middle photo={currentImage} prev={handlePrev} next={handleNext} />
+      <Middle
+        photo={currentImage}
+        prev={handlePrev}
+        next={handleNext}
+        text={text}
+        fontFamily={selectedFont}
+        fontSize={fontSize}
+        fontColor={selectColor}
+      />
       <Right
         onPhotoChange={handleImageUpload}
         texts={handleTextInput}
